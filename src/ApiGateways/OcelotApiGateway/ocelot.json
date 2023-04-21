@@ -1,0 +1,26 @@
+{
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5003"
+      },
+
+    "Routes": [{
+        "UpstreamPathTemplate": "/gateway/catalog/items",
+        "UpstreamHttpMethod": ["Get", "Post", "Put"],
+        "DownstreamPathTemplate": "/api/catalog/items",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [{
+            "Host": "localhost",
+            "Port": 5000
+        }]
+    },
+    {
+        "UpstreamPathTemplate": "/gateway/catalog/items/{id}",
+        "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+        "DownstreamPathTemplate": "/api/catalog/items/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [{
+            "Host": "localhost",
+            "Port": 5000
+        }]
+    }]
+}

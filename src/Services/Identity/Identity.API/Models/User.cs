@@ -1,7 +1,8 @@
+using AspNetCore.Identity.MongoDbCore.Models;
+
 namespace IlayMor.Bookshelf.Services.Identity.API.Models;
 
-public class User
+public class ApplicationUser : MongoIdentityUser
 {
-    public Guid Id { get; set; }
-    public string Email { get; set; }
+    // Add any additional properties here
 }

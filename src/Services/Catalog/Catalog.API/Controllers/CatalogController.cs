@@ -51,7 +51,7 @@ public class CatalogController : ControllerBase
     {
         var catalogItem = _mapper.Map<CatalogItem>(createDto);
         await _catalogRepo.AddCatalogItemAsync(catalogItem);
-        return CreatedAtRoute(nameof(GetCatalogItemByIdAsync), new { id = catalogItemReadDto.Id }, null);
+        return CreatedAtRoute(nameof(GetCatalogItemByIdAsync), new { id = catalogItem.Id }, catalogItem);
     }
 
     [HttpPut]
@@ -69,7 +69,28 @@ public class CatalogController : ControllerBase
 
         return Ok();
     }
+/*
+    [HttpPut]
+    [Route("items/{id:Guid}")]
+    public async Task<ActionResult> UpdateCatalogItemAsync(CatalogItemUpdateDto updateDto, Guid id)
+    {
+        if (id == null || (updateDto != null && updateDto.Id != id))
+        {
+            return BadRequest();
+        }
 
+        var catalogItem = await _catalogRepo.GetCatalogItemByIdAsync(updateDto.Id);
+        if (catalogItem == null)
+        {
+            return NotFound();
+        }
+
+        _mapper.Map(updateDto, catalogItem);
+        await _catalogRepo.UpdateCatalogItemAsync(catalogItem);
+
+        return Ok();
+    }
+*/
     [HttpDelete]
     [Route("items/{id:Guid}")]
     public async Task<ActionResult> DeleteCatalogItemAsync(Guid id)

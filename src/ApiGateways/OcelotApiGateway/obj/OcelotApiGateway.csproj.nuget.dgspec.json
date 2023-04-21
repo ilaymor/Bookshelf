@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Identity/Identity.API/Identity.API.csproj": {}
+    "/Users/apiiro/Desktop/Code/Bookshelf/src/ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj": {}
   },
   "projects": {
-    "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Identity/Identity.API/Identity.API.csproj": {
+    "/Users/apiiro/Desktop/Code/Bookshelf/src/ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Identity/Identity.API/Identity.API.csproj",
-        "projectName": "Identity.API",
-        "projectPath": "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Identity/Identity.API/Identity.API.csproj",
+        "projectUniqueName": "/Users/apiiro/Desktop/Code/Bookshelf/src/ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj",
+        "projectName": "OcelotApiGateway",
+        "projectPath": "/Users/apiiro/Desktop/Code/Bookshelf/src/ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj",
         "packagesPath": "/Users/apiiro/.nuget/packages/",
-        "outputPath": "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Identity/Identity.API/obj/",
+        "outputPath": "/Users/apiiro/Desktop/Code/Bookshelf/src/ApiGateways/OcelotApiGateway/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/apiiro/.nuget/NuGet/NuGet.Config"
@@ -39,21 +39,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "AspNetCore.Identity.MongoDbCore": {
-              "target": "Package",
-              "version": "[3.1.2, )"
-            },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
-            "MongoDb.Driver": {
+            "Ocelot": {
               "target": "Package",
-              "version": "[2.19.1, )"
+              "version": "[18.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
