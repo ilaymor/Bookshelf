@@ -8,7 +8,7 @@ using AutoMapper;
 namespace IlayMor.Bookshelf.Services.Catalog.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]/items")]
 [Produces("application/json")]
 public class CatalogController : ControllerBase
 {
@@ -22,7 +22,6 @@ public class CatalogController : ControllerBase
     }
 
     [HttpGet]
-    [Route("items")]
     public async Task<ActionResult<IEnumerable<CatalogItemReadDto>>> GetCatalogItems()
     {
         var catalogItems = await _catalogRepo.GetAllCatalogItemsAsync();
@@ -31,7 +30,7 @@ public class CatalogController : ControllerBase
     }
 
     [HttpGet]
-    [Route("items/{id:Guid}", Name = "GetCatalogItemByIdAsync")]
+    [Route("{id:Guid}", Name = "GetCatalogItemByIdAsync")]
     public async Task<ActionResult<CatalogItemReadDto>> GetCatalogItemByIdAsync(Guid id)
     {
         var catalogItem = await _catalogRepo.GetCatalogItemByIdAsync(id);
@@ -46,16 +45,20 @@ public class CatalogController : ControllerBase
     }
 
     [HttpPost]
-    [Route("items")]
     public async Task<ActionResult> CreateCatalogItemAsync(CatalogItemCreateDto createDto)
     {
+        var exists = await _catalogRepo.CatalogItemExists(updateDto.Id);
+        if (exists)
+        {
+            return Conflict();
+        }
+
         var catalogItem = _mapper.Map<CatalogItem>(createDto);
         await _catalogRepo.AddCatalogItemAsync(catalogItem);
-        return CreatedAtRoute(nameof(GetCatalogItemByIdAsync), new { id = catalogItem.Id }, catalogItem);
+        return CreatedAtRoute(nameof(GetCatalogItemByIdAsync), new { id = catalogItem.Id }, null);
     }
 
     [HttpPut]
-    [Route("items")]
     public async Task<ActionResult> UpdateCatalogItemAsync(CatalogItemUpdateDto updateDto)
     {
         var catalogItem = await _catalogRepo.GetCatalogItemByIdAsync(updateDto.Id);
@@ -69,34 +72,14 @@ public class CatalogController : ControllerBase
 
         return Ok();
     }
-/*
-    [HttpPut]
-    [Route("items/{id:Guid}")]
-    public async Task<ActionResult> UpdateCatalogItemAsync(CatalogItemUpdateDto updateDto, Guid id)
-    {
-        if (id == null || (updateDto != null && updateDto.Id != id))
-        {
-            return BadRequest();
-        }
 
-        var catalogItem = await _catalogRepo.GetCatalogItemByIdAsync(updateDto.Id);
-        if (catalogItem == null)
-        {
-            return NotFound();
-        }
 
-        _mapper.Map(updateDto, catalogItem);
-        await _catalogRepo.UpdateCatalogItemAsync(catalogItem);
-
-        return Ok();
-    }
-*/
     [HttpDelete]
-    [Route("items/{id:Guid}")]
+    [Route("{id:Guid}")]
     public async Task<ActionResult> DeleteCatalogItemAsync(Guid id)
     {
-        var catalogItem = await _catalogRepo.GetCatalogItemByIdAsync(id);
-        if (catalogItem == null)
+        var exists = await _catalogRepo.CatalogItemExists(updateDto.Id);
+        if (!exists)
         {
             return NotFound();
         }

@@ -5,7 +5,7 @@ namespace IlayMor.Bookshelf.Services.Catalog.API.Data;
 
 public class CatalogRepo : ICatalogRepo
 {
-    IMongoCollection<CatalogItem> _catalogItemsCollection;
+    private readonly IMongoCollection<CatalogItem> _catalogItemsCollection;
 
     public CatalogRepo(CatalogDBSettings dBSettings)
     {
@@ -39,5 +39,11 @@ public class CatalogRepo : ICatalogRepo
     public async Task DeleteCatalogItemAsync(Guid id)
     {
         await _catalogItemsCollection.DeleteOneAsync(x => x.Id == id);
+    }
+
+    public async Task<bool> CatalogItemExists(Guid id)
+    {
+        var existingCatalogItem = await GetCatalogItemByIdAsync();
+        return existingCatalogItem != null;
     }
 }

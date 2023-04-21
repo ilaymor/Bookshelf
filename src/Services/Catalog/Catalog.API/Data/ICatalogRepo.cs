@@ -9,4 +9,5 @@ public interface ICatalogRepo
     Task AddCatalogItemAsync(CatalogItem catalogItem);
     Task UpdateCatalogItemAsync(CatalogItem catalogItem);
     Task DeleteCatalogItemAsync(Guid id);
+    Task<bool> CatalogItemExists(Guid id);
 }
