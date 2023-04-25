@@ -65,4 +65,16 @@ public class FavoritesRepo : IFavoritesRepo
         return await _userFavoritesCollection.Find(x => x.UserId == userId).AnyAsync();
     }
 
+    public async Task<IEnumerable<UserFavorites>> GetAllUsersFavoritesContainingItem(Guid itemId)
+    {
+        return null;
+    }
+
+    public async Task<bool> RemoveItemFromUserFavorites(UserFavorites userFavorites, Guid itemId)
+    {
+        return false;
+    }
+
+
+
 }

@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <span>Bookshelf</span>
+</mat-toolbar>
+
+<div class="home-container">
+
+  <div class="project-info-card">
+    <mat-card>
+      <mat-card-title>
+        A social media for books
+      </mat-card-title>
+      <mat-card-content>
+        This project was built in microservices architecture, using C# / .NET for backend and Angular for frontend.
+        Each microservices uses MongoDB as its database, and inter-service communication is achieved using RabbitMQ.
+        The frontend and backend communicate via Ocelot API gateway.
+      </mat-card-content>
+    </mat-card>
+    </div>
+
+    <div class="genres-grid">
+      <mat-grid-list cols="3" rowHeight="250px" gutterSize="20px">
+        <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+          <mat-grid-tile-footer>
+            {{tile.text}}
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+</div>

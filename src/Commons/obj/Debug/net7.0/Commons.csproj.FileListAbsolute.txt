@@ -1,0 +1,12 @@
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/bin/Debug/net7.0/Commons.deps.json
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/bin/Debug/net7.0/Commons.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/bin/Debug/net7.0/Commons.pdb
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.csproj.AssemblyReference.cache
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.AssemblyInfoInputs.cache
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.AssemblyInfo.cs
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.csproj.CoreCompileInputs.cache
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/refint/Commons.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/Commons.pdb
+/Users/apiiro/Desktop/Code/Bookshelf/src/Commons/obj/Debug/net7.0/ref/Commons.dll

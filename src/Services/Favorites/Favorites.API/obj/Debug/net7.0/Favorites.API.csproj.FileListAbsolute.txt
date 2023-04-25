@@ -46,3 +46,11 @@
 /Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/obj/Debug/net7.0/Favorites.API.pdb
 /Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/obj/Debug/net7.0/Favorites.API.genruntimeconfig.cache
 /Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/obj/Debug/net7.0/ref/Favorites.API.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/MassTransit.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/MassTransit.Abstractions.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/MassTransit.AspNetCoreIntegration.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/MassTransit.RabbitMqTransport.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/RabbitMQ.Client.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/Commons.dll
+/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Favorites/Favorites.API/bin/Debug/net7.0/Commons.pdb

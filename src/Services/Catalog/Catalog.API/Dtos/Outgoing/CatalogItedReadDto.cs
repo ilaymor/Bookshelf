@@ -1,6 +1,6 @@
 namespace IlayMor.Bookshelf.Services.Catalog.API.Dtos;
 
 public record CatalogItemReadDto(
-    Guid Id,
+    Guid ItemId,
     string Title,
     string Author);

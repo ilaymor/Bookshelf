@@ -2,5 +2,5 @@ namespace IlayMor.Bookshelf.Services.Favorites.API.Models;
 
 public class FavoriteItem
 {
-    public Guid CatalogItemId { get; set; }
+    public Guid ItemId { get; set; }
 }

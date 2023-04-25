@@ -21,29 +21,28 @@ public class CatalogRepo : ICatalogRepo
 
     public async Task<CatalogItem> GetCatalogItemByIdAsync(Guid id)
     {
-        return await _catalogItemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        return await _catalogItemsCollection.Find(x => x.ItemId == id).FirstOrDefaultAsync();
     }
     public async Task AddCatalogItemAsync(CatalogItem catalogItem)
     {
-        if (catalogItem.Id == Guid.Empty)
+        if (catalogItem.ItemId == Guid.Empty)
         {
-            catalogItem.Id = Guid.NewGuid();
+            catalogItem.ItemId = Guid.NewGuid();
         }
 
         await _catalogItemsCollection.InsertOneAsync(catalogItem);
     }
     public async Task UpdateCatalogItemAsync(CatalogItem catalogItem)
     {
-        await _catalogItemsCollection.ReplaceOneAsync(x => x.Id == catalogItem.Id, catalogItem);
+        await _catalogItemsCollection.ReplaceOneAsync(x => x.ItemId == catalogItem.ItemId, catalogItem);
     }
     public async Task DeleteCatalogItemAsync(Guid id)
     {
-        await _catalogItemsCollection.DeleteOneAsync(x => x.Id == id);
+        await _catalogItemsCollection.DeleteOneAsync(x => x.ItemId == id);
     }
 
     public async Task<bool> CatalogItemExists(Guid id)
     {
-        var existingCatalogItem = await GetCatalogItemByIdAsync();
-        return existingCatalogItem != null;
+        return await _catalogItemsCollection.Find(x => x.ItemId == id).AnyAsync();
     }
 }

@@ -22,5 +22,26 @@
             "Host": "localhost",
             "Port": 5000
         }]
-    }]
+    },
+    {
+        "UpstreamPathTemplate": "/gateway/favorites/userfavorites/{id}",
+        "UpstreamHttpMethod": ["Get", "Delete", "Post"],
+        "DownstreamPathTemplate": "/api/catalog/items/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [{
+            "Host": "localhost",
+            "Port": 5208
+        }]
+    },
+    {
+        "UpstreamPathTemplate": "/gateway/favorites/userfavorites/}",
+        "UpstreamHttpMethod": ["Put"],
+        "DownstreamPathTemplate": "/api/catalog/items/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [{
+            "Host": "localhost",
+            "Port": 5208
+        }]
+    }
+]
 }
