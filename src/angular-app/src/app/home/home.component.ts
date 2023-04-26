@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  public homeText: string;
+export class HomeComponent {
+
   public tiles = [
     {text: "Mystery", cols: 1, rows: 1, color: 'lightblue'},
     {text: "Adventure", cols: 1, rows: 1, color: 'lightblue'},
@@ -16,9 +16,4 @@ export class HomeComponent implements OnInit {
     {text: "Explore more...", cols: 1, rows: 1, color: 'lightblue'}
   ]
 
-  constructor() {
-    this.homeText = 'Welcome to my app!'
-  }
-  ngOnInit(): void {
-  }
 }

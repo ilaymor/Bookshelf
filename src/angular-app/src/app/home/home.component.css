@@ -1,14 +1,54 @@
-.home-container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  min-height: 100vh;
+#header{
+  border-color: black;
 }
 
-.project-info-card{
-  width: 50%;
+mat-toolbar{
+  background-color: #9f8e7a;
 }
 
-.genres-grid{
+#toolbar-title{
+  color: black;
+  margin: 5px 0px 5px 150px;
+}
 
+#home-container{
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  grid-template-areas:
+  "projectinfo . login"
+  "projectinfo . login"
+  "genres genres genres"
+  ;
+}
+
+.genre-tile{
+  background-color: #9f8e7a;
+}
+#project-info-card{
+  grid-area: projectinfo;
+}
+
+#project-info-card mat-card-title{
+  text-align: center;
+  background-color: #9f8e7a;
+}
+
+#project-info-card mat-card-content{
+  padding: 5px 10px 10px 5px;
+  background-color: #ffe4c4;
+}
+
+#bookbar-title{
+  margin-left: 10%;
+}
+
+#login{
+  grid-area: login;
+}
+
+#genres-grid{
+  grid-area: genres;
 }

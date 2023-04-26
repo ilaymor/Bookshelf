@@ -10,10 +10,19 @@ var builder = WebApplication.CreateBuilder(args);
 var dBSettings = builder.Configuration.GetSection("MongoDBSettings").Get<CatalogDBSettings>();
 builder.Services.AddSingleton(dBSettings);
 builder.Services.AddScoped<ICatalogRepo, CatalogRepo>();
-builder.Services.AddMassTransit( x =>
+builder.Services.AddMassTransit(x =>
 {
-    x.UsingRabbitMq();
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("rabbitmq", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+    });
 });
+
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services.AddControllers();
@@ -30,7 +39,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

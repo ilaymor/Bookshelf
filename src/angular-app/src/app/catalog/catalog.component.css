@@ -1,0 +1,12 @@
+#header{
+  border-color: black;
+}
+
+mat-toolbar{
+  background-color: #9f8e7a;
+}
+
+#toolbar-title{
+  color: black;
+  margin: 5px 0px 5px 150px;
+}

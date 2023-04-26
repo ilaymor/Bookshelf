@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/YCjZreb0AFPRJy0mcfxHNMBrNzOl6gNveSHPTwOMm5YxK6Ea0UnZpB5H9tOMAbehjqeOYiEV3B9Ch/vxY0ASQ==",
+  "dgSpecHash": "qG8hqBnD3NMiCK7q2ZF9kiBEIoL8z9rqlxGlXd47LfDI5vkXLltli5srrFOYmv6lY1tYxacaxLmO/NWV5+KpnA==",
   "success": true,
   "projectFilePath": "/Users/apiiro/Desktop/Code/Bookshelf/src/Services/Catalog/Catalog.API/Catalog.API.csproj",
   "expectedPackageFiles": [

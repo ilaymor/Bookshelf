@@ -117,6 +117,10 @@
               "target": "Package",
               "version": "[7.0.3, )"
             },
+            "MongoDb.Bson": {
+              "target": "Package",
+              "version": "[2.19.1, )"
+            },
             "MongoDb.Driver": {
               "target": "Package",
               "version": "[2.19.1, )"

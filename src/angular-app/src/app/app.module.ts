@@ -5,15 +5,20 @@
   import { AppComponent } from './app.component';
   import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { HomeComponent } from './home/home.component';
+  import { CatalogComponent } from './catalog/catalog.component';
   import { MatToolbarModule } from '@angular/material/toolbar';
   import {MatGridListModule} from '@angular/material/grid-list';
   import {MatFormFieldModule} from '@angular/material/form-field';
   import {MatCardModule} from '@angular/material/card';
 
+  import { HttpClientModule } from '@angular/common/http';
+
+
   @NgModule({
     declarations: [
       AppComponent,
-      HomeComponent
+      HomeComponent,
+      CatalogComponent
     ],
     imports: [
       BrowserModule,
@@ -22,7 +27,8 @@
       MatToolbarModule,
       MatGridListModule,
       MatFormFieldModule,
-      MatCardModule
+      MatCardModule,
+      HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

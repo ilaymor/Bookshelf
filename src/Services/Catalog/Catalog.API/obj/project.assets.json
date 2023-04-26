@@ -2289,6 +2289,7 @@
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.0.14",
       "Microsoft.AspNetCore.OpenApi >= 7.0.3",
+      "MongoDb.Bson >= 2.19.1",
       "MongoDb.Driver >= 2.19.1",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -2354,6 +2355,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.3, )"
+          },
+          "MongoDb.Bson": {
+            "target": "Package",
+            "version": "[2.19.1, )"
           },
           "MongoDb.Driver": {
             "target": "Package",

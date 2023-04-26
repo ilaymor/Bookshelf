@@ -1,0 +1,12 @@
+<div id="header">
+  <mat-toolbar>
+    <span id="toolbar-title">
+      <a routerLink="/">Bookshelf</a>
+    </span>
+  </mat-toolbar>
+</div>
+
+<div *ngFor="let item of catalogItems">
+  <h3>{{ item.title }}</h3>
+  <p>Author: {{ item.author }}</p>
+</div>

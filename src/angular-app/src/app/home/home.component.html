@@ -1,30 +1,85 @@
-<mat-toolbar>
-  <span>Bookshelf</span>
-</mat-toolbar>
+<div id="header">
+  <mat-toolbar>
+    <span id="toolbar-title">
+      <a routerLink="/">Bookshelf</a>
+    </span>
+  </mat-toolbar>
+</div>
 
-<div class="home-container">
-
-  <div class="project-info-card">
+<div id="home-container">
+  <div class="grid-item" id="project-info-card">
     <mat-card>
       <mat-card-title>
-        A social media for books
+        <span>A social media for books</span>
       </mat-card-title>
       <mat-card-content>
-        This project was built in microservices architecture, using C# / .NET for backend and Angular for frontend.
-        Each microservices uses MongoDB as its database, and inter-service communication is achieved using RabbitMQ.
+        This project was built in microservices architecture, using C# / .NET for backend and Angular / Material for frontend.
+        Each microservice uses MongoDB as its database, and inter-service communication is achieved using RabbitMQ.
         The frontend and backend communicate via Ocelot API gateway.
+        <br>
+        <br>
+        This project was written by Ilay Mor. You can find the source code here.
       </mat-card-content>
     </mat-card>
-    </div>
+  </div>
 
-    <div class="genres-grid">
-      <mat-grid-list cols="3" rowHeight="250px" gutterSize="20px">
-        <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+  <div class="grid-item" id="login">
+    login
+  </div>
+
+  <div class="grid-item" id="genres-grid">
+    <mat-grid-list cols="3" rowHeight="250px" gutterSize="20px">
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
           <mat-grid-tile-footer>
-            {{tile.text}}
+            Mistery
           </mat-grid-tile-footer>
         </mat-grid-tile>
-      </mat-grid-list>
-    </div>
+      </div>
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
+          <mat-grid-tile-footer>
+            Adventure
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
+          <mat-grid-tile-footer>
+            Comedy
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
+          <mat-grid-tile-footer>
+            Romance
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
+          <mat-grid-tile-footer>
+            Non-fiction
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+
+      <div class ="genre-tile">
+        <mat-grid-tile [colspan]=1 [rowspan]=1 [style.background]="'bisque'">
+          <mat-grid-tile-footer>
+            <a routerLink="/catalog">Explore More</a>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+
+
+    </mat-grid-list>
+  </div>
 
 </div>

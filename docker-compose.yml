@@ -1,0 +1,52 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: '3.4'
+
+services:
+  catalog-api:
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/Catalog.API/Dockerfile
+
+    ports:
+      - "5001:5001"
+    depends_on:
+      - catalog-mongo
+    environment:
+      - MongoDBSettings__ConnectionString=mongodb://catalog-mongo:27017
+    networks:
+      - bookshelf_network
+
+  catalog-mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    networks:
+      - bookshelf_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - bookshelf_network
+
+  ocelot:
+    build:
+      context: .
+      dockerfile: src/ApiGateways/OcelotApiGateway/Dockerfile
+
+    ports:
+      - "5003:5003"
+    depends_on:
+      - catalog-api
+    networks:
+      - bookshelf_network
+
+# docker run -d --name angular-container -p 4200:4200 --network bookshelf_network angular-app
+# ask on stack overflow
+
+networks:
+  bookshelf_network:
+    name: bookshelf_network
